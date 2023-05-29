@@ -1,3 +1,5 @@
+require_relative "./Author"
+require_relative "./Magazine"
 class Article
     attr_reader :author, :title, :magazine
     @@all = []
@@ -10,7 +12,7 @@ class Article
     end
 
     def author
-        @@author
+        @author
     end
 
     def title

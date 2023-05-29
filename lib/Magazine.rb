@@ -7,18 +7,20 @@ class Magazine
         @@all << self
         
     end
-    def name
+    def namey
         @name
     end
 
     def category
         @category
     end
+
+    def contributors
+        Article.all.select{|article| article.magazine == self}.map {|article| article.author}
+    end
+
     def self.all
         @@all
     end
 
 end
-b1= Magazine.new("JIUM", "987")
-b3=Magazine.new("kjhd", "657")
-puts Magazine.all.inspect
